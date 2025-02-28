@@ -18,6 +18,14 @@ PW_PASSWORD=ジョブカンに登録してあるあなたのパスワード
 DESCRIPTION=残業申請の際の申請コメント
 HEADLESS_MODE=onにすると、ブラウザが立ち上がらずに打刻されます
 ```
+```
+（例）
+PW_USERNAME=yu-ogihara@kentem.co.jp
+PW_PASSWORD=HogeFuga111
+DESCRIPTION=業務のため
+HEADLESS_MODE=on
+```
+
 2. 出勤・退勤の際に、exec.batファイルをダブルクリックしてください。
 3. アプリが起動するので、出勤か打刻か選択してください。
 
