@@ -11,19 +11,19 @@
 2. `npm i`を実行してください。
 
 # 使い方
-1. envファイルに以下を設定してください。
+1. .envファイルを作成し、以下を設定してください。
 ```
 PW_USERNAME=ジョブカンに登録してあるあなたの名前
 PW_PASSWORD=ジョブカンに登録してあるあなたのパスワード
-DESCRIPTION=残業申請の際の申請コメント
+OVERTIME_REASON=残業申請の際の申請コメント
 HEADLESS_MODE=onにすると、ブラウザが立ち上がらずに打刻されます
 ```
 ```
 （例）
 PW_USERNAME=yu-ogihara@kentem.co.jp
 PW_PASSWORD=HogeFuga111
-DESCRIPTION=業務のため
-HEADLESS_MODE=on
+OVERTIME_REASON=業務のため
+HEADLESS_MODE=
 ```
 
 2. 出勤・退勤の際に、exec.batファイルをダブルクリックしてください。
