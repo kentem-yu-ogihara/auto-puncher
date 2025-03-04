@@ -33,7 +33,7 @@ async function submitOvertime(page, hours, minutesFormatted) {
   await page.selectOption("select#end_h", { value: hours });
   await page.selectOption("select#end_m", { value: minutesFormatted });
   const textarea = page.getByRole("textbox");
-  await textarea.fill(process.env.DESCRIPTION);
+  if (!process.env.OVERTIME_REASON) await textarea.fill(process.env.OVERTIME_REASON);
   await page
     .locator('input[type="button"]')
     .filter({ hasText: "確認画面に進む" })
@@ -62,19 +62,19 @@ const page = await browser.newPage();
 await punch(page);
 await sleep(2000); // 打刻してから少しだけ待機（すぐ切り替えるとちょっと不安）
 
-if (response.work === "start") console.log("今日も頑張りましょう！");
+if (response.work === "start") console.log("今日も頑張りましょう...！");
 
 if (response.work === "finish") {
   const { hours, minutesFormatted } = getRoundedTime();
   if (`${hours}${minutesFormatted}` === "170") {
     // 17:00 には残業入力を行えないので終了
-    console.log("お疲れ様でした！");
+    console.log("お疲れ様でした！🎉");
     process.exit(1);
   }
   await submitOvertime(page, hours, minutesFormatted);
   await sleep(2000);
   console.log(
-    `${hours}:${minutesFormatted.padStart(2, "0")} 残業申請が完了しました！`
+    `${hours}:${minutesFormatted.padStart(2, "0")} 残業申請が完了しました！お疲れ様でした！🎉`
   );
 }
 process.exit(1);
