@@ -33,7 +33,7 @@ async function submitOvertime(page, hours, minutesFormatted) {
   await page.selectOption("select#end_h", { value: hours });
   await page.selectOption("select#end_m", { value: minutesFormatted });
   const textarea = page.getByRole("textbox");
-  if (!process.env.OVERTIME_REASON) await textarea.fill(process.env.OVERTIME_REASON);
+  if (process.env.OVERTIME_REASON) await textarea.fill(process.env.OVERTIME_REASON);
   await page
     .locator('input[type="button"]')
     .filter({ hasText: "確認画面に進む" })
