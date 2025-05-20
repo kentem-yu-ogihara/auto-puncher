@@ -21,7 +21,7 @@ HEADLESS_MODE=onにすると、ブラウザが立ち上がらずに打刻され�
 ```
 ```bash
 （例）
-PW_USERNAME=yu-ogihara@kentem.co.jp
+PW_USERNAME=hoge-fuga@piyo.co.jp
 PW_PASSWORD=HogeFuga111
 OVERTIME_REASON=業務のため
 HEADLESS_MODE=
